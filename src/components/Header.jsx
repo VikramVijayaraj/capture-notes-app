@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>Keeper</h1>
+      <h1>Capture</h1>
     </header>
   );
 }

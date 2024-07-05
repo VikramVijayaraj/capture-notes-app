@@ -42,7 +42,9 @@ function CreateArea(props) {
           rows="3"
           value={newNote.content}
         />
-        <button onClick={addClicked}>Add</button>
+        <button onClick={addClicked}>
+          <span>+</span>
+        </button>
       </form>
     </div>
   );
