@@ -1,8 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { PORT, MongoConnection } from "./config.js";
 import Note from "./models/Note.js";
+import "dotenv/config";
 
 const app = express();
 
@@ -38,11 +38,11 @@ app.delete("/:id", async (req, res) => {
 
 // MongoDB connection
 mongoose
-  .connect(MongoConnection)
+  .connect(process.env.MONGO_CONNECT)
   .then(() => {
     console.log("Connected to database!");
-    app.listen(PORT, () => {
-      console.log(`Server running on port: ${PORT}`);
+    app.listen(process.env.SERVER_PORT, () => {
+      console.log(`Server running on port: ${process.env.SERVER_PORT}`);
     });
   })
   .catch((err) => {

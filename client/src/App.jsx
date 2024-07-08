@@ -4,15 +4,15 @@ import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "./config";
-import EditArea from "./components/EditArea";
 
 function App() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     axios
-      .get(BASE_URL)
+      .get(API_URL)
       .then((response) => setNotes(response.data))
       .catch((err) => console.log(err));
   }, []);
@@ -22,14 +22,14 @@ function App() {
       return [...prevValues, newNote];
     });
     await axios
-      .post(BASE_URL, newNote)
+      .post(API_URL, newNote)
       .then(() => console.log("Note created!"))
       .catch((err) => console.log(err));
   }
 
   async function deleteNote(id) {
     await axios
-      .delete(BASE_URL + `${id}`)
+      .delete(API_URL + `${id}`)
       .then(() => console.log("Note deleted!"))
       .catch((err) => console.log(err));
     setNotes((prevValues) => {
