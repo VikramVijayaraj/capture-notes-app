@@ -28,6 +28,7 @@ app.post("/", async (req, res) => {
   res.json(newNote);
 });
 
+// Delete a note
 app.delete("/:id", async (req, res) => {
   const { id } = req.params;
   await Note.findByIdAndDelete(id);
@@ -47,13 +48,3 @@ mongoose
   .catch((err) => {
     console.log(`Connection failed: ${err}`);
   });
-
-const newNote = new Note({
-  title: "test_title",
-  content: "test_content",
-});
-const anotherNote = new Note({
-  title: "test_title2",
-  content: "test_content2",
-});
-// Note.insertMany([newNote, anotherNote]);
