@@ -9,7 +9,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: ["https://capture-client.vercel.app/"],
+    origin: ["https://capture-client.vercel.app/", "http://localhost:5173/"],
     methods: ["POST", "GET", "DELETE"],
     credentials: true,
   })
