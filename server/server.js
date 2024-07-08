@@ -7,7 +7,13 @@ import "dotenv/config";
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://capture-client.vercel.app/"],
+    methods: ["POST", "GET", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // Routes
