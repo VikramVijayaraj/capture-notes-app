@@ -5,6 +5,7 @@ import { Zoom } from "@mui/material";
 
 function CreateArea(props) {
   const [newNote, setNewNote] = useState({
+    _id: "",
     title: "",
     content: "",
   });
@@ -28,6 +29,7 @@ function CreateArea(props) {
   function addClicked(event) {
     props.handleClick(newNote);
     setNewNote({
+      _id: "",
       title: "",
       content: "",
     });

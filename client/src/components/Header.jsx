@@ -1,10 +1,10 @@
-import CameraIcon from '@mui/icons-material/Camera';
+// import CameraIcon from '@mui/icons-material/Camera';
 
 function Header() {
   return (
     <header>
       <h1>
-        <CameraIcon />
+        {/* <CameraIcon /> */}
         Capture
       </h1>
     </header>
