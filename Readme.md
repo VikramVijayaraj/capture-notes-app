@@ -45,6 +45,7 @@ capture-notes-app/
   - ReactJS
   - Vite
   - Axios
+  - Material UI
 
 - **Back End:**
   - NodeJS
